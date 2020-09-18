@@ -18,30 +18,31 @@ const Dashboard = (props) => {
             <h4>Welcome, {props.user.username}</h4>
             <div className="flex-container">
                 <Chart />
-                <Total />
+               
                 <AddCar carTotal={props.cars.length} />
             </div>
             <Table>
                 <TableHead>
                     <TableRow>
                         <TableCell>Id</TableCell>
-                        <TableCell>Make/Model</TableCell>
-                        <TableCell>MPG</TableCell>
-                        <TableCell>Cylinders</TableCell>
-                        <TableCell>Horsepower</TableCell>
+                        <TableCell>Name</TableCell>
+                        <TableCell>Description</TableCell>
+                        <TableCell>Address</TableCell>
+                        <TableCell>Hours</TableCell>
                         <TableCell>Delete</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                {props.cars.map((car, idx) => (
-                    <TableRow key={car.id}>
+                {props.listings.map((listing, idx) => (
+                    <TableRow key={listing.id}>
                         <TableCell component="th" scope="row">
-                            {car.id}
+                            {listing.id}
                         </TableCell>
-                        <TableCell>{car["name"]}</TableCell>
-                        <TableCell>{car["mpg"]}</TableCell>
-                        <TableCell>{car["cylinders"]}</TableCell>
-                        <TableCell>{car["horsepower"]}</TableCell>
+                        <TableCell>{listing["name"]}</TableCell>
+                        <TableCell>{listing["description"]}</TableCell>
+                        <TableCell>{listing["address"]}</TableCell>
+                        <TableCell>{listing["hours"]}</TableCell>
+                        
                         <TableCell>
                             <DeleteIcon
                                 // add onClick method here

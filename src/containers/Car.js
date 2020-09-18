@@ -3,7 +3,7 @@ import Car from '../components/Car'
 
 const mapStateToProps = (state) => {
     return {
-        cars: state.cars
+        listings: state.listings
     }
 }
 

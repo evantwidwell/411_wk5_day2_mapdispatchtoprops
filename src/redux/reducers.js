@@ -6,6 +6,7 @@ const user = (state = null) => state
 const cars = (state = [], action) => {
     switch(action.type) {
         case 'ADD_CAR':
+            console.log("action value"+ action.value)
             return [ ...state, action.value ]
         case 'REMOVE_CAR':
             const newState = [ ...state ]

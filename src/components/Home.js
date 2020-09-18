@@ -1,26 +1,26 @@
 import React from 'react'
 import { Card, CardContent, CardActions, Divider } from '@material-ui/core'
 import { Link } from 'react-router-dom'
-import cars from '../cars.json' // remove this
+
 
 const Home = (props) => {
     return (
         <div className="card-container">
             {/* Change cars to props.cars and remove the cars.json import above */}
-            {props.cars.map((car, idx) => (
+            {props.listings.map((listing, idx) => (
                 <Card key={idx} className="card">
                     <CardContent className="text-gray">
-                        <span>{car.name.toUpperCase()}</span>
+                        <span>{listing.name.toUpperCase()}</span>
                         <ul>
-                        <li>Miles per Gallon: {car["mpg"]}</li>
-                        <li>Cylinders: {car["cylinders"]}</li>
-                        <li>Horsepower: {car["horsepower"]}</li>
+                        <li>Description: {listing["description"]}</li>
+                        <li>Address: {listing["address"]}</li>
+                        <li>Hours: {listing["hours"]}</li>
                         </ul>
                     </CardContent>
                     <Divider />
-                    <CardActions style={{ color: 'mediumblue' }}>
+                    {/* <CardActions style={{ color: 'mediumblue' }}>
                         <Link to={`/car/${car.id}`}>See More Details</Link>
-                    </CardActions>
+                    </CardActions> */}
                 </Card>
             ))}
         </div>
